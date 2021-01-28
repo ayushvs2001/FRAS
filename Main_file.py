@@ -9,7 +9,7 @@ import face_recognition
 
 root = Tk()
 root.configure(background='black')
-root.title("FACE RECOGNITION + ATTENDANCE PROJECT")
+root.title("FACE RECOGNITION + ATTENDANCE PROJECT-")
 root.iconbitmap("photos/FACE_RECO.ico")
 
 # set image in window
@@ -77,7 +77,7 @@ def open_person_database():
         add_btn.grid(row=3, column=0, columnspan=2, pady=10, padx=10, ipadx=47)
 
         # label and input field for oid and delete button
-        oid_label = Label(top, text="O-ID : ", font="arial")
+        oid_label = Label(top, text="P-ID : ", font="arial")
         oid_label.grid(row=4, column=0, pady=(10, 0))
 
         oid = Entry(top, width=25, font="arial")
@@ -117,7 +117,7 @@ def open_person_database():
             root.deiconify()
             top.destroy()
 
-        exit2_btn = Button(top, text="EXIT", font="arial", fg="red", bg="yellow", command=hide_open2)
+        exit2_btn = Button(top, text="EXIT", font="arial", fg="blue", bg="red", command=hide_open2)
         exit2_btn.grid(row=6, column=1, columnspan=2, pady=10, padx=(100, 0), ipadx=50)
 
     except:
