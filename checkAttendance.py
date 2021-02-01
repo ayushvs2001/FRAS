@@ -38,7 +38,7 @@ def add_attedance(name):
 
     c.execute("INSERT INTO person_attendance VALUES(:name, :date, :time)",
                               {
-                                  "name": name,
+                                  "name": name.title(),
                                   "date": str(current_date),
                                   "time": str(current_time)
                               })
@@ -63,13 +63,15 @@ def check_attendance_data(name, date):
 
     col = ""
 
+
+
     # retrive all data from the person_attendance
     if name != "" and date == "":
-        col = f"name = '{name}'"
+        col = f"name = '{name.title()}'"
     elif name == "" and date != "":
         col = f"date = '{date}'"
     else:
-        col = f"name = '{name}' and date='{date}'"
+        col = f"name = '{name.title()}' and date='{date}'"
 
     c.execute("SELECT * FROM person_attendance where "+col)
     records = c.fetchall()
@@ -92,11 +94,11 @@ def delete_attendance(name, date):
     col = ""
 
     if name != "" and date == "":
-        col = f"name = '{name}'"
+        col = f"name = '{name.title()}'"
     elif name == "" and date != "":
         col = f"date = '{date}'"
     else:
-        col = f"name = '{name}' and date='{date}'"
+        col = f"name = '{name.title()}' and date='{date}'"
 
     c.execute("delete FROM person_attendance where "+col)
     records = c.fetchall()
@@ -120,7 +122,7 @@ def make_attendace_file(name, date):
     worksheet = workbook.add_worksheet()
 
     # add data
-    data = check_attendance_data(name, date)
+    data = check_attendance_data(name.title(), date)
 
     worksheet.write(0, 0, "NAME")
     worksheet.write(0, 1, "DATE")

@@ -24,7 +24,7 @@ def add(name, encoding):
 
     c.execute("INSERT INTO person_info VALUES (:name, :encoding)",
               {
-                  "name": name,
+                  "name": name.title(),
                   "encoding": sqlite3.Binary(out.read())
               })
 
@@ -140,8 +140,7 @@ def mark_attendance():
                 matchIndex = numpy.argmin(faceDis)
 
                 if matches[matchIndex]:
-                    name = classNames[matchIndex].upper()
-                    # print(name)
+                    name = classNames[matchIndex].title()
                     y1, x2, y2, x1 = faceLoc
                     y1, x2, y2, x1 = y1 * 4, x2 * 4, y2 * 4, x1 * 4
                     cv2.rectangle(img, (x1, y1), (x2, y2), (0, 255, 0), 2)

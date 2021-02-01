@@ -7,6 +7,9 @@ from tkinter import filedialog
 import cv2
 import face_recognition
 
+
+"""
+We creating the tkinter object, So that root window appear, when we execute this program"""
 root = Tk()
 root.configure(background='black')
 root.title("FACE RECOGNITION + ATTENDANCE PROJECT-")
@@ -124,9 +127,10 @@ def open_person_database():
         messagebox.showerror("Message", "Error in the open_person database")
 
 
-person_btn = Button(root, text="Person's Database", font="arial", fg="white", bg="green", padx=80, pady=10,
+file_database = PhotoImage(file="photos/database.png")
+person_btn = Button(root, text="Person's Database",image=file_database,compound=LEFT,  font="arial", fg="white", bg="green",
                      command=open_person_database)
-person_btn.pack(pady=10)
+person_btn.pack(padx=40,pady=10,ipady=3,ipadx=36)
 
 
 # function for attendance from camera
@@ -137,10 +141,10 @@ def take_attendance():
     except cv2.error:
         messagebox.showerror("Message", "Please check web cam is attached or not \n And try again")
 
-
-take_attendance_btn = Button(root, text="Take Attendance", font="arial", fg="white", bg="blue", padx=80, pady=10,
+file_web_camera = PhotoImage(file="photos/web_camera.png")
+take_attendance_btn = Button(root, text="Take Attendance", image=file_web_camera,compound=LEFT,  font="arial", fg="white", bg="blue",
                         command=take_attendance)
-take_attendance_btn.pack(padx=50, pady=10)
+take_attendance_btn.pack(padx=30, pady=(10,10),ipady=3,ipadx=40)
 
 
 # create new window for person database
@@ -181,7 +185,7 @@ def check_attendance_window():
         def callbackFunc(event):  # this function used to get selected item from the combo box and load into oid i/p box
             """when the item choose from the combobox it load to choice"""
             choice = quality_combo.get()
-            choice = int((choice.strip())[0])
+            choice = choice.str
 
             # put the data choose into oid input field
             date.insert(0, choice)
@@ -218,13 +222,14 @@ def check_attendance_window():
         messagebox.showerror("Message", "Error in the open_person database")
 
 
-check_attendance_btn = Button(root, text="Check Attendance", font="arial", fg="white", bg="violet", padx=76, pady=10,
+file_camera = PhotoImage(file="photos/attendance.png")
+check_attendance_btn = Button(root, text="Check Attendance", image=file_camera,compound=LEFT, font="arial", fg="white", bg="violet",
                              command=check_attendance_window)
-check_attendance_btn.pack(padx=50, pady=10)
+check_attendance_btn.pack(padx=30, pady=10,ipadx=40,ipady=3)
 
-exit_btn = Button(root, text="Exit", command=root.quit, font="arial", fg="white", bg="red", padx=140, pady=10)
-exit_btn.pack(padx=50, pady=10)
-
+file_delete = PhotoImage(file="photos/delete.png")
+exit_btn = Button(root, text="Exit", image=file_delete,compound=LEFT,command=root.quit, font="arial", fg="white", bg="red")
+exit_btn.pack(padx=50, pady=(10,10),ipadx=105,ipady=3)
 
 root.mainloop()
 
