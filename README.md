@@ -11,7 +11,7 @@ Face Recognition and Attendance System with
 - Adding image data into database
 - Face recognition
 - Attendance System
-- Retriving data of attending person/student in excel file(.xlsx)
+- Retriving data of attending person/student from database in excel file(.xlsx)
 
 ## Screenshots
 Output image for the given project is given as following:
