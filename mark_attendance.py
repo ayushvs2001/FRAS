@@ -65,7 +65,7 @@ def mark_attendance():
             imgs = cv2.resize(img, (0, 0), None, 0.25, 0.25)
             imgs = cv2.cvtColor(imgs, cv2.COLOR_BGR2RGB)
 
-            faces_cur_frame = face_recognition.face_locations(imgs)  # sending only first img
+            faces_cur_frame = face_recognition.face_locations(imgs)  # sending only first image
             encode_cur_frame = face_recognition.face_encodings(imgs, faces_cur_frame)
 
             for encodeFace, faceLoc in zip(encode_cur_frame, faces_cur_frame):
