@@ -14,7 +14,7 @@ def add_attendance(name):
     current_date = now.date()
     current_time = now.strftime("%H:%M:%S")
 
-    # make in format of h*10000+m*100+s
+    # make in format of h*10000 + m*100 + s
     current_time = (str(current_time)).split(":")
     hour, minute, second = current_time[0], current_time[1], current_time[2]
     current_time = int(hour) * 10000 + int(minute) * 100 + int(second)
