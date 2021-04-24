@@ -1,5 +1,5 @@
 # FRAS
-Face_Recognition_And_Attendance_Project
+Face Recognition and Attendance System
 
 Output image for the given project is given as following:
 
