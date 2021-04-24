@@ -68,5 +68,3 @@ def show():
         quality_list.append(str(record[2]) + " " + str(record[0]))
 
     return quality_list
-
-
