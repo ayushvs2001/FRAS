@@ -284,7 +284,7 @@ def check_attendance_window():
             root.deiconify()
             top.destroy()
 
-        # show and exit button
+        # data generator button
         generate_btn = Button(top, text="GENERATE EXCEL FILE", font="arial", fg="blue", bg="cyan", padx=5,
                               command=lambda: refresh() and make_attendace_file([name.get(), start_date.get(),
                                                                                  end_date.get(),
